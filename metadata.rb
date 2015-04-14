@@ -1,3 +1,4 @@
+name             "sugarcrm"
 maintainer       "Wyatt Walter"
 maintainer_email "wwalter@sugarcrm.com"
 license          "Apache 2.0"
