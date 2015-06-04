@@ -41,6 +41,17 @@ mysql_database 'sugarcrm' do
   action :create
 end
 
+# grant select,update,insert privileges to all tables in foo db from all hosts, requiring connections over SSL
+mysql_database_user 'sugarcrm' do
+  connection mysql_connection_info
+  password 'super_secret'
+  database_name 'foo'
+  host '%'
+  privileges [:select,:update,:insert]
+  require_ssl true
+  action :grant
+end
+
 directory "#{node[:sugarcrm][:webroot]}" do
   owner "#{node[:apache][:user]}"
   group "#{node[:apache][:group]}"
