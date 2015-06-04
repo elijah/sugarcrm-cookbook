@@ -24,11 +24,21 @@ include_recipe "git"
 include_recipe "mysql"
 
 
-mysql_service 'foo' do
+mysql_service 'sugarcrm-mysql' do
   port '3306'
   version '5.5'
   initial_root_password 'changeme'
   action [:create, :start]
+end
+
+# Create a mysql database
+mysql_database 'sugarcrm' do
+  connection(
+    :host     => '127.0.0.1',
+    :username => 'root',
+    :password => node['wordpress-cust01']['mysql']['initial_root_password']
+  )
+  action :create
 end
 
 directory "#{node[:sugarcrm][:webroot]}" do
