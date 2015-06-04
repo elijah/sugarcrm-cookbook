@@ -23,6 +23,14 @@ include_recipe %w{php::package php::module_mysql}
 include_recipe "git"
 include_recipe "mysql"
 
+
+mysql_service 'foo' do
+  port '3306'
+  version '5.5'
+  initial_root_password 'changeme'
+  action [:create, :start]
+end
+
 directory "#{node[:sugarcrm][:webroot]}" do
   owner "#{node[:apache][:user]}"
   group "#{node[:apache][:group]}"
