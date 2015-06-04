@@ -41,6 +41,14 @@ mysql_database 'sugarcrm' do
   action :create
 end
 
+# Externalize conection info in a ruby hash
+mysql_connection_info = {
+  :host     => '127.0.0.1',
+  :username => 'root',
+  :password => 'changeme'
+  #node['mysql']['server_root_password']
+}
+
 # grant select,update,insert privileges to all tables in foo db from all hosts, requiring connections over SSL
 mysql_database_user 'sugarcrm' do
   connection mysql_connection_info
