@@ -21,7 +21,7 @@
 include_recipe "apache2"
 include_recipe %w{php::package php::module_mysql}
 include_recipe "git"
-
+include_recipe 'mysql2_chef_gem'
 
 
 mysql_service 'sugarcrm-mysql' do
