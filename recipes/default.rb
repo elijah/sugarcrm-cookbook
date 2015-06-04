@@ -23,6 +23,7 @@ include_recipe %w{php::package php::module_mysql}
 include_recipe "git"
 
 #include_recipe 'mysql2_chef_gem'
+package "libmysqlclient-dev"
 
 mysql_client 'default' do
   action :create
