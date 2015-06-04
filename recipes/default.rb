@@ -24,6 +24,10 @@ include_recipe "git"
 
 #include_recipe 'mysql2_chef_gem'
 
+mysql_client 'default' do
+  action :create
+end
+
 chef_gem "mysql2"
 
 mysql_service 'sugarcrm-mysql' do
