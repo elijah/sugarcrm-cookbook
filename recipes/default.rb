@@ -19,6 +19,7 @@
 
 
 include_recipe "apache2"
+include_recipe "apache2::mod_php5"
 include_recipe %w{php::package php::module_mysql}
 include_recipe "git"
 
