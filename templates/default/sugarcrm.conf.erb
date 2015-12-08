@@ -1,0 +1,17 @@
+<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    ServerName sugarcrm.example.com
+    ErrorLog /var/log/apache2/sugarcrm_error_log
+
+    DocumentRoot /sugarcrm/
+    <Directory />
+        Options FollowSymLinks
+        AllowOverride all
+    </Directory>
+    <Directory /sugarcrm/>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride all
+        Order allow,deny
+        allow from localhost
+    </Directory>
+</VirtualHost>
