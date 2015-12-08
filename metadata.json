@@ -4,7 +4,8 @@
     "php": ">= 0.0.0",
     "openssl": ">= 0.0.0",
     "git": ">= 0.0.0",
-    "apache2": ">= 0.0.0"
+    "apache2": ">= 0.0.0",
+    "mysql2_chef_gem": ">= 0.0.0"
   },
   "name": "sugarcrm",
   "maintainer_email": "wwalter@sugarcrm.com",
