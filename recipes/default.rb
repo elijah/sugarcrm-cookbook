@@ -34,7 +34,7 @@ chef_gem "mysql2"
 mysql_service 'sugarcrm-mysql' do
   port '3306'
   version '5.5'
-  initial_root_password 'changeme'
+  initial_root_password "#{node['sugarcrm']['db']['password']}"
   action [:create, :start]
 end
 
@@ -52,7 +52,7 @@ end
 mysql_connection_info = {
   :host     => '127.0.0.1',
   :username => 'root',
-  :password => 'changeme'
+  :password => "#{node['sugarcrm']['db']['password']}"
   #node['mysql']['server_root_password']
 }
 
