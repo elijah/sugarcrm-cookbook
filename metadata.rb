@@ -11,4 +11,4 @@ depends          "mysql"
 depends          "openssl"
 depends          "git"
 depends           "database"
-depends          "mysql2_chef_gem"
+depends 'mysql2_chef_gem', '~> 1.0'
