@@ -29,7 +29,11 @@ mysql_client 'default' do
   action :create
 end
 
-chef_gem "mysql2"
+mysql2_chef_gem 'default' do
+  action :install
+end
+
+# chef_gem "mysql2"
 
 mysql_service 'sugarcrm-mysql' do
   port '3306'
