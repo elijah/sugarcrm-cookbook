@@ -38,6 +38,10 @@ end
 
 # chef_gem "mysql2"
 
+mysql_service 'default' do
+  action [:delete]
+end
+
 mysql_service 'sugarcrm-mysql' do
   port '3306'
   version '5.5'
