@@ -18,6 +18,7 @@
 #
 
 node.default["apache"]["mpm"] = "prefork"
+node.default["apache"]["docroot_dir"] = "/sugarcrm"
 
 include_recipe "apache2"
 include_recipe "apache2::mod_php5"
