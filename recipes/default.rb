@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-node['apache']['mpm'] = "prefork"
+node.default["apache"]["mpm"] = "prefork"
 
 include_recipe "apache2"
 include_recipe "apache2::mod_php5"
